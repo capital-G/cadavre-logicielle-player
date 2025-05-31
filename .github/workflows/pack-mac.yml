@@ -7,11 +7,15 @@ on:
 
 jobs:
   build:
-    runs-on: macOS-latest
+    runs-on: macos-${{ matrix.os-version }}
     strategy:
       matrix:
         ghc: ["9.8.2"]
         cabal: ["3.10.3.0"]
+        os-version: [
+          "latest",
+          "13"
+        ]
 
     steps:
       - name: Check out code
