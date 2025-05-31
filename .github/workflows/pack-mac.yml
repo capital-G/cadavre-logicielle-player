@@ -2,8 +2,8 @@ name: Mac-CI
 
 on:
   push:
-    tags:
-      - "v*.*.*"
+    # tags:
+    #   - "v*.*.*"
 
 jobs:
   build:
@@ -80,7 +80,7 @@ jobs:
           npx electron-forge import
           npm run make
 
-      - name: Release
-        uses: softprops/action-gh-release@v1
-        with:
-          files: out/make/zip/darwin/*/*.zip
+      # - name: Release
+      #   uses: softprops/action-gh-release@v1
+      #   with:
+      #     files: out/make/zip/darwin/*/*.zip
